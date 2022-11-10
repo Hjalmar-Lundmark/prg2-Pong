@@ -15,10 +15,21 @@ public class Boll {
     }
 
     public void bounce() {
-        y = -y;
+        x = -x;
     }
 
-    public void bounce(Paddle b) {
-        x = -x;
+    public void bounce2(Paddle b) {
+        if (b.getY() == y) {
+            y = -y;
+        }
+    }
+
+    //???
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 }
