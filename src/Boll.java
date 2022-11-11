@@ -1,8 +1,8 @@
 public class Boll {
     private int x;
     private int y;
-    private int vx;
-    private int vy;
+    private int vx = 1;
+    private int vy = 1;
 
     public Boll(int x, int y) {
         this.x = x;
@@ -15,16 +15,15 @@ public class Boll {
     }
 
     public void bounce() {
-        x = -x;
+        vx = -vx;
     }
 
     public void bounce2(Paddle b) {
-        if (b.getY() == y) {
-            y = -y;
+        if (y == (b.getY()-1) && y == (b.getY()+1) && b.getX() <= x && x <= (b.getX()+b.getWidth())) {
+                vy = -vy;
         }
     }
 
-    //???
     public int getX() {
         return x;
     }
